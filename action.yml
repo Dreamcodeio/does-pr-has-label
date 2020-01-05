@@ -1,0 +1,12 @@
+name: 'Does PR has the label?'
+description: 'Returns true or false depending on whether the PR has the specified label'
+inputs:
+  label:  
+    description: 'The label'
+    required: true
+outputs:
+  has-label: 
+    description: 'Has the label?'
+runs:
+  using: 'node12'
+  main: 'index.js'
