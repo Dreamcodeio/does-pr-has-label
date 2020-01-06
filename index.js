@@ -2,7 +2,12 @@ const core = require("@actions/core");
 
 const github = require("@actions/github");
 
-const context = github.context;
+const label = core.getInput("label");
 
-console.log(JSON.stringify(github.context));
-console.log(JSON.stringify(process.env));
+core.setOutput("label", label);
+const hasLabel = github.context.payload.pull_request.labels.some(
+  name => name === label
+);
+core.setOutput("hasLabel", hasLabel);
+
+console.log(`Does Pull Request has ${label} label?: ${hasLabel}`);
