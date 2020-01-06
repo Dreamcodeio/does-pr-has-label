@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: Dreamcodeio/pr-has-label-action@master
+      id: checkLabel
       with:
         label: PROVISION:FEATURE_BRANCH
+    - name: Does 'pull_request' has ${{ steps.checkLabel.outputs.checkedLabel }} label? 
+      run: echo "${{ steps.checkLabel.outputs.hasLabel }}" 
 ```
