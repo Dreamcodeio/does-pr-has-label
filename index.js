@@ -6,7 +6,7 @@ const label = core.getInput("label");
 
 core.setOutput("label", label);
 const hasLabel = github.context.payload.pull_request.labels.some(
-  name => name === label
+  item => item.name === label
 );
 core.setOutput("hasLabel", hasLabel);
 
