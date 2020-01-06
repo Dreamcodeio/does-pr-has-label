@@ -4,7 +4,7 @@ Do you want to know if a PR has a particular label? You can use this action to e
 
 Example:
 
-```
+```yaml
 name: CI
 on: 
   pull_request:
